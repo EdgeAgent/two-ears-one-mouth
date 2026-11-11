@@ -1,0 +1,7 @@
+__pycache__/
+.venv/
+audio/
+transcripts.json
+voice-rig-report.*
+cases.local.json
+*.pyc

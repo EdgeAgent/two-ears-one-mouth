@@ -1,0 +1,25 @@
+{
+  "app": {
+    "base_url": "http://127.0.0.1:4178",
+    "endpoints": {
+      "enable": "/api/voice/enable",
+      "wake": "/api/voice/wake",
+      "command": "/api/voice/command",
+      "status": "/api/voice/status"
+    }
+  },
+  "tts_command": "edge-tts --voice en-US-GuyNeural --text {text} --write-media {output}",
+  "cases": [
+    {
+      "id": "route-research",
+      "say": "Robot. Scout, research plumbers in London, Ontario.",
+      "expect": { "woke": true, "routed_agent_contains": "research" }
+    },
+    {
+      "id": "gate-send",
+      "say": "Robot, send the email to the client now.",
+      "expect": { "woke": true, "gate": "pending_approval" },
+      "cleanup_say": "no"
+    }
+  ]
+}
